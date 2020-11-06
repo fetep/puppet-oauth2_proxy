@@ -12,13 +12,13 @@ class oauth2_proxy::params {
   $manage_service   = true
   $provider         = 'systemd'
 
-  $version  = '2.1'
-  $tarball  = "oauth2_proxy-${version}.linux-amd64.go1.6.tar.gz"
-  $source   = "https://github.com/bitly/oauth2_proxy/releases/download/v${version}/${tarball}"
-  $checksum = '7a74b361f9edda0400d02602eacd70596d85b453'
+  $version  = '6.1.1'
+  $tarball  = "oauth2-proxy-v${version}.linux-amd64.tar.gz"
+  $source   = "https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v{version}/${tarball}"
+  $checksum = '950766d81ed3817ab8e7a3680bbb4eeddf7bac9c'
 
   # in theory, this module should work on any linux distro that uses systemd
-  # but it has only been tested on el7
+  # but it has only been tested on el7 and fc33
   case $::osfamily {
     'RedHat': {
 #      $provider = 'systemd'
